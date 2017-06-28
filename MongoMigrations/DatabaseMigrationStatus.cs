@@ -34,7 +34,7 @@
             }
             var databaseVersion = GetVersion();
             var migrationVersion = _Runner.MigrationLocator.LatestVersion();
-            throw new ApplicationException("Database is not the expected version, database is at version: " + databaseVersion + ", migrations are at version: " + migrationVersion);
+            throw new InvalidOperationException("Database is not the expected version, database is at version: " + databaseVersion + ", migrations are at version: " + migrationVersion);
         }
 
         public virtual MigrationVersion GetVersion()

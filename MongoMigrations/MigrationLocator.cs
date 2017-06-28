@@ -17,7 +17,7 @@
 
         public virtual void LookForMigrationsInAssemblyOfType<T>()
         {
-            var assembly = typeof(T).Assembly;
+            var assembly = typeof(T).GetTypeInfo().Assembly;
             LookForMigrationsInAssembly(assembly);
         }
 
@@ -42,7 +42,7 @@
             try
             {
                 return assembly.GetTypes()
-                    .Where(t => typeof(Migration).IsAssignableFrom(t) && !t.IsAbstract)
+                    .Where(t => typeof(Migration).GetTypeInfo().IsAssignableFrom(t) && !t.GetTypeInfo().IsAbstract)
                     .Select(Activator.CreateInstance)
                     .OfType<Migration>()
                     .Where(m => !MigrationFilters.Any(f => f.Exclude(m)));

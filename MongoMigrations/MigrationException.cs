@@ -2,7 +2,7 @@
 {
     using System;
 
-    public class MigrationException : ApplicationException
+    public class MigrationException : Exception
     {
         public MigrationException(string message, Exception innerException) : base(message, innerException)
         {

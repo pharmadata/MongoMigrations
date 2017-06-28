@@ -1,3 +1,5 @@
+using System.Reflection;
+
 namespace MongoMigrations
 {
     using System.Linq;
@@ -11,6 +13,7 @@ namespace MongoMigrations
                 return false;
             }
             return migration.GetType()
+                .GetTypeInfo()
                 .GetCustomAttributes(true)
                 .OfType<ExperimentalAttribute>()
                 .Any();
