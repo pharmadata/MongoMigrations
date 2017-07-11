@@ -1,7 +1,7 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
-    <TargetFramework>netstandard1.5</TargetFramework>
+    <TargetFrameworks>netstandard1.5;net451</TargetFrameworks>
     <PackageId>PharmaDataMongoMigrations</PackageId>
     <Authors>PharmaData &amp; phoenixwebgroup</Authors>
     <Company />
@@ -11,6 +11,7 @@
     <PackageLicenseUrl>https://github.com/pharmadata/MongoMigrations</PackageLicenseUrl>
     <PackageProjectUrl>https://github.com/pharmadata/MongoMigrations</PackageProjectUrl>
     <RepositoryUrl>https://github.com/pharmadata/MongoMigrations</RepositoryUrl>
+    <Version>1.0.1</Version>
   </PropertyGroup>
 
   <ItemGroup>
